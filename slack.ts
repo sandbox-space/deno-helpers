@@ -4,8 +4,6 @@ export function sendSlackMessage(webhookUrl: string, message: string): void {
     mrkdwn: true,
   };
 
-  return;
-
   fetch(webhookUrl, {
     method: "POST",
     headers: {
