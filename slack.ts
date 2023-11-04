@@ -1,10 +1,10 @@
-export function sendSlackMessage(webhookUrl: string, message: string): void {
+export function sendSlackMessage(webhookUrl: string, message: string): Promise<Response> {
   const payload = {
     text: `${message}`,
     mrkdwn: true,
   };
 
-  fetch(webhookUrl, {
+  return fetch(webhookUrl, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
